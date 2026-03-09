@@ -35,7 +35,7 @@ def format_docs(docs):
 
 def get_rag_chain(k=5):
     vectorstore = get_vectorstore()
-    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": k})
+    retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": k, "lambda_mult": 0.7})
     llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
     prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
 
