@@ -3,4 +3,5 @@
 __pycache__/
 chroma_db/
 *.pyc
-hf-space/
+hf-space/.git_hf/
+hf-space/.gitattributes
